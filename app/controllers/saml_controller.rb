@@ -29,6 +29,7 @@ class SamlController < ApplicationController
 
         settings.assertion_consumer_service_url = "http://localhost:4000/saml/consume"
         settings.sp_entity_id                   = "http://localhost:4000"
+        settings.private_key                    = File.read("#{Rails.root}/private-key.pem")
         #settings.name_identifier_format         = "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress"
         # Optional for most SAML IdPs
         #settings.authn_context = "urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport"
